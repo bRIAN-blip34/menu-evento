@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menú de Bebidas - Rotary Club Mercedes</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <script src="precios.js"></script>
+</head>
+<body>
+  <div class="background-image"></div>
+  <div class="contenido">
+    <header>
+      <h1>ROTARY CLUB<br><span class="ciudad">MERCEDES</span></h1>
+      <hr class="divider" />
+    </header>
+
+    <main>
+      <div class="menu">
+        <h2>🍹 Menú de Bebidas</h2>
+        <ul id="lista-precios"></ul>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const ul = document.getElementById("lista-precios");
+    for (const bebida in precios) {
+      const precio = precios[bebida];
+      const li = document.createElement("li");
+      const span1 = document.createElement("span");
+      span1.textContent = bebida;
+      const span2 = document.createElement("span");
+      span2.textContent = "$" + precio;
+      li.appendChild(span1);
+      li.appendChild(span2);
+      ul.appendChild(li);
+    }
+  </script>
+</body>
+</html>
