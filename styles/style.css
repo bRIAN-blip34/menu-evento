@@ -110,3 +110,6 @@ header .ciudad {
     max-width: 90%;
   }
 }
+.divider {
+  display: none;
+}
