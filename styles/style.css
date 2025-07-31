@@ -96,3 +96,17 @@ header .ciudad {
     font-size: 1rem;
   }
 }
+.logo-rotary {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 20px auto 10px;
+  filter: drop-shadow(2px 2px 4px #000);
+}
+
+/* Estilo especial para pantallas chicas (celulares) */
+@media (max-width: 600px) {
+  .logo-rotary {
+    max-width: 90%;
+  }
+}
