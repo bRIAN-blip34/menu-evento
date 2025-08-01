@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Carta de Bebidas - Rotary Club Mercedes</title>
   <link rel="stylesheet" href="styles/style.css" />
-  <script src="precios.js"></script>
+  <script src="precios.js" defer></script>
 </head>
 <body>
   <div class="background-image"></div>
@@ -23,15 +23,25 @@
     </main>
   </div>
 
+  <script src="precios.js"></script>
   <script>
     const ul = document.getElementById("lista-precios");
     for (const bebida in precios) {
-      const precio = precios[bebida];
+      const { precio, icono } = precios[bebida];
       const li = document.createElement("li");
+
+      const iconImg = document.createElement("img");
+      iconImg.src = `icons/${icono}`;
+      iconImg.alt = bebida;
+      iconImg.className = "icono-bebida";
+
       const span1 = document.createElement("span");
       span1.textContent = bebida;
+
       const span2 = document.createElement("span");
-      span2.textContent = "$" + precio;
+      span2.textContent = "$" + precio.toLocaleString("es-AR");
+
+      li.appendChild(iconImg);
       li.appendChild(span1);
       li.appendChild(span2);
       ul.appendChild(li);
